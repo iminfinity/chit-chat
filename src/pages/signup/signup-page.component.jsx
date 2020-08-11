@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import {
   signup,
   signInWithGoogle,
@@ -10,7 +10,7 @@ import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import "./signup.styles.scss";
 
-const SignUp = () => {
+const SignUp = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -23,6 +23,8 @@ const SignUp = () => {
     } catch (error) {
       setError({ error: error.message });
     }
+    history.push("/chat");
+    window.location.reload(false);
   };
 
   const googleSignIn = async () => {
@@ -84,4 +86,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default withRouter(SignUp);

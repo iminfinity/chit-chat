@@ -5,31 +5,59 @@
   justify-content: center;
   align-items: center;
   height: 80vh;
-  form {
+  position: relative;
+  .chats {
+    width: 80%;
+    height: 60%;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
     align-items: center;
-    position: relative;
+    padding-top: 10px;
 
-    hr {
-      border: 1px groove rgba(grey, 0.6);
-      margin-top: 20px;
+    .message {
+      margin-bottom: 10px;
+      border: 1px solid black;
+      padding: 10px;
+      min-height: 60px;
       width: 300px;
-    }
-    .sign-in-with {
       display: flex;
-      margin-top: 20px;
-      column-gap: 20px;
-    }
-    .signin-bottom {
-      position: absolute;
-      bottom: 0;
+      flex-direction: column;
+      span {
+        align-self: flex-end;
+        &:first-child {
+          font-style: italic;
+          margin-top: 10px;
+        }
+      }
     }
   }
-
+  form {
+    display: flex;
+    margin: 20px 0;
+    width: 80%;
+    height: 40px;
+    input {
+      width: 80%;
+      outline: none;
+    }
+    button {
+      color: whitesmoke;
+      width: 20%;
+      outline: none;
+      border: none;
+      background: #6246ea;
+      font-size: 20px;
+      &:hover {
+        background: rgba(#6246ea, 0.8);
+        cursor: pointer;
+      }
+    }
+  }
+  .chat-bottom {
+    position: absolute;
+    bottom: 0;
+  }
   @media screen and (max-width: 800px) {
     margin: 10px 10px;
   }

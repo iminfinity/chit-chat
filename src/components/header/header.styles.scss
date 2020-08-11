@@ -7,7 +7,7 @@
   .nav {
     padding-left: 12px;
     font-size: 24px;
-    font-weight: 100px;
+    font-weight: bold;
 
     &:hover {
       color: rgba(#551a8b, 0.7);
@@ -17,5 +17,6 @@
     margin: 10px;
     font-size: 15px;
     cursor: pointer;
+    font-weight: unset;
   }
 }

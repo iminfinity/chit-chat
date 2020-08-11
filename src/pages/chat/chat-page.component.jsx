@@ -11,9 +11,6 @@ const Chat = () => {
   const [writeError, setWriteError] = useState(null);
   const [email, setEmail] = useState("");
 
-  // useEffect(() => {
-  //   window.location.reload(false);
-  // }, []);
   useEffect(() => {
     async function getCurrentUser() {
       let currentUser = await auth().currentUser;
@@ -48,6 +45,7 @@ const Chat = () => {
         message,
         timestamp: Date.now(),
         uid: user.uid,
+        email,
       });
       setMessage("");
     } catch (error) {
@@ -68,8 +66,9 @@ const Chat = () => {
       <div className="chats">
         {chats.map((chat) => {
           return (
-            <p key={chat.timestamp}>
+            <p key={chat.timestamp} className="message">
               {chat.message}
+              <span> {chat.email}</span>
               <span>{formatTime(chat.timestamp)}</span>
             </p>
           );
@@ -83,7 +82,7 @@ const Chat = () => {
         {writeError ? <p>{writeError}</p> : null}
         <button type="submit">Send</button>
       </form>
-      <div>
+      <div className="chat-bottom">
         Logged in as: <strong>{email}</strong>
       </div>
     </div>
