@@ -1,0 +1,21 @@
+.header {
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  color: #551a8b;
+
+  .nav {
+    padding-left: 12px;
+    font-size: 24px;
+    font-weight: 100px;
+
+    &:hover {
+      color: rgba(#551a8b, 0.7);
+    }
+  }
+  .logout {
+    margin: 10px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}

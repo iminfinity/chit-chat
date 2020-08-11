@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #551a8b;
+  &:visited {
+    color: #551a8b;
+  }
+}
+
+body {
+  font-family: "Recursive", sans-serif;
+}
